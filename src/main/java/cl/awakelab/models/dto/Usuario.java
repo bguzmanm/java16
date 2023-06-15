@@ -1,4 +1,4 @@
-package cl.awakelab;
+package cl.awakelab.models.dto;
 
 public class Usuario {
 	private String nombre;
@@ -24,10 +24,5 @@ public class Usuario {
 	public void setApellido(String apellido) {
 		this.apellido = apellido;
 	}
-	
-	
-	
-	
-	
 
 }

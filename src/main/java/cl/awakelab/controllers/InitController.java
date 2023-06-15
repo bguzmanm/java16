@@ -1,4 +1,4 @@
-package cl.awakelab;
+package cl.awakelab.controllers;
 
 import java.util.*;
 import java.io.IOException;
@@ -8,27 +8,22 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import cl.awakelab.models.service.StudentService;
+
+
 @WebServlet("/")
-public class MiServlet extends HttpServlet {
+public class InitController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 
-    public MiServlet() {
+    public InitController() {
         super();
     }
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		List<Usuario> lista = new ArrayList<Usuario>();
-		
-		
-		lista.add(new Usuario("Rocio", "Venegas"));
-		lista.add(new Usuario("Ricardo", "Cea"));
-		lista.add(new Usuario("Michael", "Rojas"));
-		
-		request.setAttribute("usuarios", lista);
-		
+	
 		getServletContext().getRequestDispatcher("/views/index.jsp").forward(request, response);
 		
 	}
