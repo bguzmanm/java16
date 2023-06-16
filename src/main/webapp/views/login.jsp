@@ -16,17 +16,25 @@
 		<h2>Autenticación</h2>	
 	</div>
 	<div class="container">
-		<form action="login" method="post" class="form">
-			<div class="mb-3">
-	  			<label class="form-label" for="username">Username:</label>
-	  			<input type="text" id="username" name="username" class="form-control">	
+		<form action="login" method="post" class="form align-self-center">
+			<div class="mb-3 row">
+		  		<label class="col-sm-2 col-form-label" for="username">Username:</label>
+		  		<div class="col-sm-4">
+	  				<input type="text" id="username" name="username" class="form-control">
+	  			</div>	
 			</div>
-			<div class="mb-3">
-				<label for="password" class="form-label">Password:</label>
-				<input type="password" id="password" name="password" class="form-control">	
+			<div class="mb-3 row">
+				<label for="password" class="col-sm-2 col-form-label">Password:</label>
+				<div class="col-sm-4">
+					<input type="password" id="password" name="password" class="form-control">	
+				</div>
+			</div>
+			<div class="mb-3 row justify-content-evenly">
+				<div class="col-sm-4 align-self-rigth">
+					<button type="submit" class="btn btn-primary">Iniciar</button>
+				</div>
 			</div>
 	
-		<button type="submit" class="btn btn-primary">Iniciar</button>
 		</form>
 	</div>
 	
