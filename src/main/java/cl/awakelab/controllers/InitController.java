@@ -22,10 +22,7 @@ public class InitController extends HttpServlet {
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-	
 		getServletContext().getRequestDispatcher("/views/index.jsp").forward(request, response);
-		
 	}
 
 

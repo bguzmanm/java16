@@ -8,22 +8,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import cl.awakelab.models.service.StudentService;
 
-
-@WebServlet("/students")
-public class StudentController extends HttpServlet {
+@WebServlet("/teachers")
+public class TeacherController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-
-    public StudentController() {
+    
+    public TeacherController() {
         super();
-     
+        
     }
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
 		HttpSession session = request.getSession();
 		
 		if (session.getAttribute("isLogged") == null) {
@@ -36,23 +33,12 @@ public class StudentController extends HttpServlet {
 			getServletContext().getRequestDispatcher("/login").forward(request, response);
 		} 
 		
-		StudentService studentService = new StudentService();
-		
-		String param = request.getParameter("id");
-		
-		if (param == null) {
-			request.setAttribute("students", studentService.findAll());
-			getServletContext().getRequestDispatcher("/views/studentsList.jsp").forward(request, response);
-		} else {
-			int id = Integer.parseInt(param);
-			request.setAttribute("student", studentService.findOne(id));
-			getServletContext().getRequestDispatcher("/views/student.jsp").forward(request, response);
-		}
-		
-		
+		getServletContext().getRequestDispatcher("/views/teachers.jsp").forward(request, response);
 	}
 
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
 		doGet(request, response);
 	}
 
