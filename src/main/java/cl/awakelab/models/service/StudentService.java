@@ -32,5 +32,18 @@ public class StudentService {
 		return studentsList.stream().filter(s -> s.getId() == id).findFirst().orElse(null);
 		
 	}
+	
+	public boolean save(int id, String name, String lastName, String address, LocalDate birstday) {
+		
+		Student student = findOne(id);
+		student.setName(name);
+		student.setLastName(lastName);
+		student.setAddress(address);
+		student.setBirthday(birstday);
+		
+		
+		return true;
+		
+	}
 
 }

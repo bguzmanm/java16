@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <title>Bienvenidos - Lista de Estudiantes</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+<script src="https://kit.fontawesome.com/81a2ed02b0.js" crossorigin="anonymous"></script>
 
 </head>
 <body>
@@ -21,13 +22,19 @@
 			<tr>
 				<th>Nombre</th>
 				<th>Apellido</th>
+				<th></th>
 			</tr>
 		</thead>
 		<tbody>
 			<c:forEach var="student" items="${students}">
 				<tr>
-					<td><c:url value="/students?id=${student.getId()}" var="studentUrl"/><a href="${studentUrl}"><c:out value="${student.getName()}"/></a></td>
+					<td><c:out value="${student.getName()}"/></td>
 					<td><c:out value="${student.getLastName()}"></c:out></td>
+					<td>
+						<a href="${pageContext.request.contextPath}/students?a=read&id=${student.getId()}"><i class="fa-solid fa-book-open"></i></a>
+						<a href="${pageContext.request.contextPath}/students?a=edit&id=${student.getId()}"><i class="fa-solid fa-pen-to-square"></i></a>
+						<a href="${pageContext.request.contextPath}/students?a=delete&id=${student.getId()}"><i class="fa-solid fa-trash-can"></i></a>
+					</td>
 				</tr>
 			</c:forEach>
 		</tbody>
